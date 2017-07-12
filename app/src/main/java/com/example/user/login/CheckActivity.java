@@ -99,18 +99,15 @@ public class CheckActivity extends AppCompatActivity {
                     .setPositiveButton("ok",null)
                     .show();
 
-
             SharedPreferences setting = getSharedPreferences("login",MODE_PRIVATE);
             setting.edit().putString("loginid",loginid).commit();
             setting.edit().putString("password",password).commit();
+
 
             SharedPreferences history = getSharedPreferences("history",MODE_PRIVATE);
             history.edit().putString("date",s + " " + dateFormat.format(date)).commit();
 
             s = history.getString("date", dateFormat.format(date));
-
-
-
 
         }else{
             new AlertDialog.Builder(this)
